@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+#love-button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+#love-button:hover {
+    background-color: #ff1493;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-text {
+    color: white;
+    font-size: 24px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* قلوب متحركة */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    transform: rotate(45deg);
+    animation: float 5s infinite;
+    z-index: 0;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+/* حركة القلوب */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* مواقع القلوب العشوائية */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 30%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.heart:nth-child(3) {
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(4) {
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 90%;
+    animation-duration: 7s;
+    animation-delay: 4s;
+}
